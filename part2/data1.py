@@ -28,9 +28,18 @@ print(f'the price is ${price}')
 #BOOLEANS
 
 is_student = False
-is_admin = True
+is_admin = False
 has_email = True
 
 print(f'you are a student : {is_student}')
 print(f'you are an admin : {is_admin}')
 print(f'you have an email : {has_email}')
+
+if is_admin:
+    print('welcome to the darshboard')
+
+else:
+    print('you are not an admin')
+
+
+    
