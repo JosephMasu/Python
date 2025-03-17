@@ -8,4 +8,4 @@ age = int(age)
 age = age + 1
 
 print(f'Hi ' + name)
-print(f'You aremasu {age} years old')
+print(f'You are {age} years old')
