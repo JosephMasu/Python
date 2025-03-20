@@ -1,3 +1,5 @@
+# list[]: ordered and changeable, duplicate okay
+
 languages = ['c', 'java', 'python', 'javascript']
 
 print(languages[0])
