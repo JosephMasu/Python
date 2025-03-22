@@ -1,6 +1,5 @@
 # quiz game 
 
-
 questions = ('what is 1 + 0 ?: ',
              'what is 1 + 1 ?: ',
              'what is 1 + 2 ?: ',
