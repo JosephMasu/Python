@@ -4,16 +4,20 @@ options = ('rock', 'scissors', 'paper')
 
 print()
 print('---------- Your Game Has Started----------')
-
 player1 = input("player1: Enter your choice: ")
-player2 = input("player2: Enter your choice: ")
+
+# player1 = random.choice(options)
+player2 = random.choice(options)
+# print('player1: Enter your choice: '+ player1)
+print('player2: Enter your choice: '+ player2)
+
 
 if player1 not in options or player2 not in options:
     print('invalid choice')
     exit()
 
 else:
-    print(f'\n player1: {player1}')
+    print(f'player1: {player1}')
     print(f'player2: {player2}')
 
 if player1 == player2:
