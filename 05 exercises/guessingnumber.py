@@ -26,6 +26,7 @@ while is_running:
         else:
             print(f'CORRECT! The answer was {answer}')
             print(f'Number of guesses: {guess}')
+            is_running = False
     
     else:
         print('Invalid guess.')
