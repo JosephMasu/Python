@@ -1,5 +1,4 @@
 #Strings
-
 first_name ='Masu'
 food ='ugali'
 email='masu123@fakegmail.com'
