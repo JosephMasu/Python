@@ -1,0 +1,11 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Password manager secrets (do not commit)
+key.key
+passwords.txt
+.passwords
