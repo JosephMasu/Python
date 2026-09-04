@@ -44,4 +44,5 @@ def get_stats():
         print(f"Assists: {stat['ast']}")
 
 
+
 get_scoreboard()
