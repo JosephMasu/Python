@@ -1,40 +1,47 @@
-grid = [
-    ["S", ".", ".", ".", "."],
-    ["#", "#", ".", "#", "."],
-    [".", ".", ".", "#", "."],
-    [".", "#", ".", ".", "."],
-    [".", ".", ".", ".", "E"]
-]
+from requests import get
+from pprint import PrettyPrinter
 
-start = (0, 0)
-end = (4, 4)
+BASE_URL = "https://api.balldontlie.io/v1"
+API_KEY = "f5fd1f14-e3bc-4abb-bbd1-5ce51857f635"
 
-queue = [start]
-visited = [start]
+printer = PrettyPrinter()
 
-while queue:
-    current = queue.pop(0)
+headers = {
+    "Authorization": API_KEY
+}
 
-    if current == end:
-        print("Path found!")
-        break
 
-    row, col = current
+def get_scoreboard():
+    url = BASE_URL + "/games"
 
-    directions = [
-        (-1, 0),  # up
-        (1, 0),   # down
-        (0, -1),  # left
-        (0, 1)    # right
-    ]
+    response = get(url, headers=headers)
+    games = response.json()["data"]
 
-    for dr, dc in directions:
-        new_row = row + dr
-        new_col = col + dc
+    for game in games:
+        home_team = game["home_team"]
+        away_team = game["visitor_team"]
 
-        if 0 <= new_row < len(grid) and 0 <= new_col < len(grid[0]):
-            if grid[new_row][new_col] != "#" and (new_row, new_col) not in visited:
-                queue.append((new_row, new_col))
-                visited.append((new_row, new_col))
+        print("------------------------------------------")
+        print(f"{home_team['abbreviation']} vs {away_team['abbreviation']}")
+        print(f"{home_team['name']}: {game['home_team_score']}")
+        print(f"{away_team['name']}: {game['visitor_team_score']}")
+        print(f"Status: {game['status']}")
 
-print(visited)
+
+def get_stats():
+    url = BASE_URL + "/stats"
+
+    response = get(url, headers=headers)
+    stats = response.json()["data"]
+
+    for stat in stats:
+        player = stat["player"]
+
+        print("------------------------------------------")
+        print(f"{player['first_name']} {player['last_name']}")
+        print(f"Points: {stat['pts']}")
+        print(f"Rebounds: {stat['reb']}")
+        print(f"Assists: {stat['ast']}")
+
+
+get_scoreboard()
