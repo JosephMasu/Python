@@ -1,0 +1,13 @@
+One day, {name} went to {place}.
+
+While walking around, {name} saw a very {adjective} {animal}.
+
+The {animal} suddenly decided to {verb}!
+
+{name} was surprised and gave the animal some {food}.
+
+The animal was so happy that it jumped {number} times.
+
+After that strange adventure, {name} went home and
+
+wondered what had just happened.
