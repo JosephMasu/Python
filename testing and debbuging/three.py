@@ -7,4 +7,4 @@ try:
     x = 1 / 0
 
 except ZeroDivisionError as e:
-    logging.error(f"An error occurred: {e}", exc_info=True)
+    logging.exception(f"ZeroDivisionError")
