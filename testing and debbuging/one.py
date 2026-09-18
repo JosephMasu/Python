@@ -1,5 +1,8 @@
 import logging
 
+logging.basicConfig(level=logging.INFO, filename="log.log", filemode="w", format="%(asctime)s - %(levelname)s - %(message)s")
+# logging.basicConfig(level=logging.INFO)
+
 logging.debug("This is a debug message")
 logging.info("This is an info message") 
 logging.warning("This is a warning message")
